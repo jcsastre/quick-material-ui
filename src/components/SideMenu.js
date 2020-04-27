@@ -1,6 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import ExitToApp from '@material-ui/icons/ExitToApp';
 
 const drawerWidth = 240;
 
@@ -34,6 +42,22 @@ function SideMenu() {
             paper: classes.drawerPaper,
             }}
         >
+          <Grid container justify='center' alignItems='center'>
+            <Avatar
+              src='https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg'
+              className={classes.bigAvatar}
+            />
+          </Grid>
+          <List>
+        {['Profile', 'Sign Out'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <AccountCircleIcon /> : <ExitToApp />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
         </Drawer>
     )
 }
