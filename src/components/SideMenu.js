@@ -49,15 +49,15 @@ function SideMenu() {
             />
           </Grid>
           <List>
-        {['Profile', 'Sign Out'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <AccountCircleIcon /> : <ExitToApp />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+            {['Profile', 'Sign Out'].map((text, index) => (
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <AccountCircleIcon /> : <ExitToApp />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            ))}
+          </List>
         </Drawer>
     )
 }
